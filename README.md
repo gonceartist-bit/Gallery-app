@@ -6,7 +6,7 @@
 
 - React 18 + Vite
 - آیکون: lucide-react
-- ذخیره‌سازی: `localStorage` (در اجرای مستقل) — همان کد بدون تغییر داخل Claude Artifacts هم با `window.storage` کار می‌کند (`src/storage.js`)
+- ذخیره‌سازی: `localStorage` (در اجرای مستقل) — همان کد بدون تغییر داخل Claude Artifacts هم با `window.storage` کار می‌کند (`storage.js`)
 
 ## اجرای محلی
 
