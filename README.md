@@ -49,6 +49,14 @@ npm run build
 npx wrangler deploy
 ```
 
+## نصب به‌عنوان اپ (PWA)
+
+پروژه یک Web App Manifest (`public/manifest.json`) و Service Worker (`public/sw.js`) دارد، پس مرورگر باید گزینه‌ی «Install app» / «نصب» رو نشون بده (نه فقط «Add shortcut»). اگر باز هم فقط shortcut پیشنهاد شد:
+
+- مطمئن شو از طریق آدرس **https** واقعی سایت باز کردی (نه در حالت پیش‌نمایش/preview محلی).
+- در Chrome، سه‌نقطه‌ی بالا → اگه گزینه «Install app» نبود، صفحه رو رفرش کن و چند ثانیه صبر کن (مرورگر باید manifest و service worker رو اسکن کنه).
+- در Chrome desktop می‌تونی از DevTools → تب **Application → Manifest** چک کنی که مرورگر manifest رو درست خونده و هیچ خطایی نداره.
+
 ## نکته درباره‌ی داده‌ها
 
 داده‌ها (پوشه‌ها، تنظیمات، تصاویر) در `localStorage` همان مرورگری که برنامه را باز می‌کنی ذخیره می‌شوند — یعنی محلی روی همان دستگاه/مرورگر هستند، نه در فضای ابری Cloudflare. اگر بعداً خواستی داده‌ها بین دستگاه‌ها sync شوند، باید یک بک‌اند/دیتابیس واقعی (مثلاً Cloudflare D1 یا KV) اضافه شود.
