@@ -25,26 +25,28 @@ npm run build
 
 خروجی در پوشه‌ی `dist/` ساخته می‌شود.
 
-## دیپلوی روی Cloudflare Pages
+## دیپلوی روی Cloudflare Pages / Workers
 
-### روش ۱ — از طریق داشبورد Cloudflare (ساده‌ترین راه)
+فایل `wrangler.toml` در ریشه‌ی پروژه از قبل آماده است و به `wrangler` می‌گوید خروجی `dist/` را به‌عنوان سایت استاتیک آپلود کند. اگر این فایل نباشد، دستور `npx wrangler deploy` با خطا مواجه می‌شود.
+
+### روش ۱ — از طریق داشبورد Cloudflare (Git integration)
 
 1. این ریپازیتوری را در گیت‌هاب push کن.
-2. در Cloudflare Dashboard برو به **Workers & Pages → Create → Pages → Connect to Git** و همین ریپو را انتخاب کن.
+2. در Cloudflare Dashboard برو به **Workers & Pages → Create → Connect to Git** و همین ریپو را انتخاب کن.
 3. تنظیمات build:
-   - **Framework preset:** Vite
    - **Build command:** `npm run build`
-   - **Build output directory:** `dist`
+   - **Deploy command:** `npx wrangler deploy`
+   - **Root directory:** `/`
 4. روی **Save and Deploy** بزن.
 
-از این به بعد هر push به شاخه‌ی اصلی، به‌طور خودکار دوباره دیپلوی می‌شود.
+از این به بعد هر push به شاخه‌ی اصلی، به‌طور خودکار دوباره build و دیپلوی می‌شود.
 
-### روش ۲ — از طریق CLI (wrangler)
+### روش ۲ — از طریق CLI (بدون Git integration)
 
 ```bash
 npm install -g wrangler
 npm run build
-wrangler pages deploy dist --project-name painting-gallery
+npx wrangler deploy
 ```
 
 ## نکته درباره‌ی داده‌ها
