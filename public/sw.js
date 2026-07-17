@@ -17,6 +17,7 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
+// استراتژی: شبکه اول، در صورت قطعی به کش برگرد (برای پوسته‌ی اپ)
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
   event.respondWith(
