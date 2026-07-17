@@ -1,1 +1,19 @@
-
+{
+  "name": "گالری شخصی نقاشی",
+  "short_name": "گالری نقاشی",
+  "description": "آرشیو شخصی تصاویر، تکنیک‌ها و رفرنس‌های نقاشی",
+  "start_url": "/",
+  "id": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F5F2EC",
+  "theme_color": "#A85D34",
+  "dir": "rtl",
+  "lang": "fa",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
